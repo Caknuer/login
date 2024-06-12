@@ -7,5 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 //'/login--> memanggin class yang memanggil index
-Route::get('/login', [loginController::class,'index']);
-Route::post('/php/login', [loginController::class,'login']);
+Route::get('/php', [loginController::class,'index']);
+// Route::post('/php/login', [loginController::class,'login']);

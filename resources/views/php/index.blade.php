@@ -1,39 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" constant="width=device-width, initisl-scale=1">
-        <title>Login</title>
-        <link href="http://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    </head>
-    <body class="bg-light">
-        <main class="container">
-          <!-- LOGIN -->
-          <div class="w-50 center border rounded px-3 py-3 mx-auto">
-            <h1>Login</h1>
-            <form action="{{ url('/php/login')}}" method="post">
-              @csrf
-              @method("POST")
-              <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" value="" name="email" class="form-control" placeholder="text@gmail.com">
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" placeholder="********">
-              </div>
-              <div class="mb-3 d-grid">
-                <button name="submit" type="submit" class="btn btn-primary">Login</button>
-              </div>
-              <li class="nav-item">
-                <label type="teks" class="center">Silahkan daftar terlebih dahulu !!!</label>
-                <button href="" class="btn btn-primsry border mx-auto" type="submit">Sing in</button>
-              </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Laravel 11</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .login-card {
+            max-width: 400px;
+            margin: 100px auto;
+            background-color: #84cce9;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        .login-card-header {
+            background-color: #3881c5;
+            color: #fff;
+            padding: 20px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .login-card-body {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="login-card-header">
+            <div class="text-center">
+                {{-- <div class="circle">
+                    <svg width="100" height="100" viewBox="0 0 500 500" src="logo.svg ">
+                        <circle cx="250" cy="250" r="200"/>
+                        </svg>
+                        </div> --}}
+                <embed type="image/svg+xml" src="logo.svg" width="300" height="300">
+                {{-- <img src="{{ asset('public/logo.svg') }}" alt="Logo" width="100"> --}}
+            </div>
+            <h4 class="text-center mt-3">Login to Your Account</h4>
+        </div>
+        <div class="login-card-body">
+            <form action="" method="POST">
+                @csrf
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" name="remember">
+                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
             </form>
-          </div>
-        </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    </body>
+        </div>
+    </div>
+</body>
 </html>
